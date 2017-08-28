@@ -1,0 +1,56 @@
+Este arquivo foi criado com o objetivo de esclarecer
+o funcionamento do código de maneira informal.
+
+
+O código foi desenvolvido com o objetivo de ser o
+mais flexivel possível de forma que nada que seja
+implementado seja perdido. A ideia foi criar
+uma hirarquia de classes que permita que mais
+de um método seja implementado para realizar uma
+mesma tarefa. Um arquivo de configuração é
+responsável por determinar os métodos que serão
+utilizados e os seus parâmetros.
+
+A principal vantagem desta abordagem é que nada que
+foi implementado é perdido, os diversos métodos,
+embora pior ou melhor, estejam disponíveis para o uso.
+
+A desvantagem é a complexidade do código para que todos
+os métodos sejam compativeis e a necessidade de um
+arquivo de configuração mais complexo.
+
+
+Segmentação:
+
+A segmentação é dividida em duas etapas, detecção de
+região para segmentação e extração de segmento.
+
+A classe Segmentation é a principal que gerencia todo
+o método de segmentação. A segmentação é realizada em
+duas etapas, a busca por locais de segmentação e a
+extração de segmento. Essa classe é reponsável por
+carregar os arquivos de configuração e pela alocação
+de memoria (otimização).
+
+A classe SegmentExtractor é uma classe abstrata que
+representa os métodos de extração de segmento.
+
+A classe SegmentSearcher é uma classe abstrata que
+representa os métodos de busca por regiões da imagem
+para extração de segmentos.
+
+A classe segment define um segmento.
+
+Ideias:
+Eglen sugeriu uma normalização de imagens diferente
+para tratar o problema de visualização de imagens
+16 bits num espaço 8 bits.  A ideia é basicamente
+misturar a normalização com o truncamento, ao inves
+de truncar as imagens em 255, realizar esse truncamento
+em um intensidade maior e depois normalizar. O grande
+desafio seria detectar qual a intensidade utilizar.
+Para o problema de visualização um ScrolBar poderia
+ser utilizado para calibração manual dessa intensidade
+de truncamento.
+
+
